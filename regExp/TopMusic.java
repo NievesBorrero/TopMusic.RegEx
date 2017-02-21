@@ -1,14 +1,14 @@
-package estructurasIII.regExp;
+package regExp;
 
 import java.util.*;
 
 /**
  * 7. TopMusic. Implementa un programa que gestione una lista de las canciones
- * m·s escuchadas. El usuario podr·: a. AÒadir una canciÛn (en una posiciÛn) al
+ * m√°s escuchadas. El usuario podr√°: a. A√±adir una canci√≥n (en una posici√≥n) al
  * TopMusic. b. Sacar un elemento del TopMusic. c. Subir un puesto en el
  * TopMusic. d. Bajar un puesto en el TopMusic. e. Mostrar la lista TopMusic. f.
- * Mostrar la canciÛn m·s escuchada. Sobre la canciÛn se almacenar· el tÌtulo,
- * artista o grupo y aÒo de grabaciÛn.
+ * Mostrar la canci√≥n m√°s escuchada. Sobre la canci√≥n se almacenar√° el t√≠tulo,
+ * artista o grupo y a√±o de grabaci√≥n.
  * 
  * @author Nieves Borrero
  * @version 1.0
@@ -17,7 +17,7 @@ public class TopMusic{
 	private ArrayList<Cancion> top;
 	
 	/**
-	 * Constructor que crea una lista vacÌa
+	 * Constructor que crea una lista vac√≠a
 	 */
 	TopMusic() {
 		setTop(new ArrayList<Cancion>());
@@ -32,7 +32,7 @@ public class TopMusic{
 	}
 
 	/**
-	 * AÒade una nueva canciÛn al TopMusic en el index seÒalado.
+	 * A√±ade una nueva canci√≥n al TopMusic en el index se√±alado.
 	 * 
 	 * @param index
 	 * @param cancion
@@ -48,7 +48,7 @@ public class TopMusic{
 	}
 
 	/**
-	 * AÒade una cancion al final
+	 * A√±ade una cancion al final
 	 * 
 	 * @param cancion
 	 */
@@ -61,7 +61,7 @@ public class TopMusic{
 	}
 
 	/**
-	 * Comprueba que el Ìndice introducido sea v·lido
+	 * Comprueba que el √≠ndice introducido sea v√°lido
 	 * 
 	 * @param index
 	 * @return boolean
@@ -76,8 +76,8 @@ public class TopMusic{
 	 * Elimina un elemento del TopMusic
 	 * 
 	 * @param index
-	 * @return true o false, en funciÛn de si ha sido posible eliminar el
-	 *         elemento del index dado por par·metro o no.
+	 * @return true o false, en funci√≥n de si ha sido posible eliminar el
+	 *         elemento del index dado por par√°metro o no.
 	 */
 	boolean remove(int index) {
 		if (!esValido(index - 1))
@@ -87,61 +87,61 @@ public class TopMusic{
 	}
 
 	/**
-	 * Sube la posiciÛn en el top (baja posiciÛn de Ìndice)
+	 * Sube la posici√≥n en el top (baja posici√≥n de √≠ndice)
 	 * 
 	 * @param index
 	 * @return true si modifica la posicion o false, si no puede porque el
-	 *         Ìndice introducido como par·metro no es v·lido.
+	 *         √≠ndice introducido como par√°metro no es v√°lido.
 	 */
 	boolean up(int index) {
 		if (!esValido(index - 1))
 			return false;
-		if (index - 2 < 0) // Si al subir la posiciÛn se sale de rango
+		if (index - 2 < 0) // Si al subir la posici√≥n se sale de rango
 			return false;
 		getTop().add(index - 2, getTop().remove(index - 1));
-		// AÒade en una posiciÛn anterior, la canciÛn con el Ìndice introducido
-		// borrando esa canciÛn del Ìndice en el que estaba.
+		// A√±ade en una posici√≥n anterior, la canci√≥n con el √≠ndice introducido
+		// borrando esa canci√≥n del √≠ndice en el que estaba.
 		return true;
 	}
 
 	/**
-	 * Baja la posiciÛn en el top (sube la posiciÛn de Ìndice)
+	 * Baja la posici√≥n en el top (sube la posici√≥n de √≠ndice)
 	 * 
 	 * @param index
 	 * @return true si modifica la posicion o false, si no puede porque el
-	 *         Ìndice introducido como par·metro no es v·lido.
+	 *         √≠ndice introducido como par√°metro no es v√°lido.
 	 */
 	boolean down(int index) {
 		if (!esValido(index - 1))
 			return false;
 		if (index > getTop().size() - 1)
-			return false; // Si al bajar la posiciÛn se sale de rango
+			return false; // Si al bajar la posici√≥n se sale de rango
 		getTop().add(index, getTop().remove(index - 1));
-		// AÒade en una posiciÛn posterior(el Ìndice introducido le est· dando
-		// la posiciÛn siguiente), borrando
-		// esa canciÛn del Ìndice en el que estaba.
+		// A√±ade en una posici√≥n posterior(el √≠ndice introducido le est√° dando
+		// la posici√≥n siguiente), borrando
+		// esa canci√≥n del √≠ndice en el que estaba.
 		return true;
 	}
 
 	/**
-	 * Saca fuera del top 10 una canciÛn
+	 * Saca fuera del top 10 una canci√≥n
 	 * 
 	 * @param index
 	 */
 	boolean pullOut(int index) {
 		if (!esValido(index - 1) || top.size() < 10)
 			return false;
-		top.add(10, getTop().remove(index - 1)); // AÒade en una posiciÛn
+		top.add(10, getTop().remove(index - 1)); // A√±ade en una posici√≥n
 													// siguiente al top10,
 													// borrando la
-													// canciÛn de su lugar.
+													// canci√≥n de su lugar.
 		return true;
 	}
 
 	/**
-	 * devuelve la canciÛn con la primera posiciÛn.
+	 * devuelve la canci√≥n con la primera posici√≥n.
 	 * 
-	 * @return una canciÛn
+	 * @return una canci√≥n
 	 */
 	Cancion top() {
 		if (isEmpty())
@@ -150,7 +150,7 @@ public class TopMusic{
 	}
 
 	/**
-	 * Verifica si la lista esta vacÌa o no
+	 * Verifica si la lista esta vac√≠a o no
 	 * 
 	 * @return boolean
 	 */
