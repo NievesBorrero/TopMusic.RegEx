@@ -1,4 +1,4 @@
-package estructurasIII.regExp;
+package regExp;
 
 /**
  * @author Nieves Borrero
@@ -10,7 +10,7 @@ public class TestTopMusic {
 	static TopMusic topMusic = new TopMusic();
 
 	public static void main(String[] args) {
-		Menu menu = new Menu("OPCIONES:", new String[] { "añadir cancion",
+		Menu menu = new Menu("OPCIONES:", new String[] { "aÃ±adir cancion",
 				"Mostrar lista", "subir puesto de cancion",
 				"Bajar puesto de cancion", "Sacar del Top 10",
 				"Mostrar cancion en el puesto numero 1",
@@ -74,7 +74,7 @@ public class TestTopMusic {
 			if (!topMusic.pullOut(Teclado.leerEntero("Introduce el indice de la cancion")))
 				System.out.println("No se ha podido sacar del top");
 			else
-				System.out.println("La canción ha salido del top10");
+				System.out.println("La canciÃ³n ha salido del top10");
 		}
 	}
 
@@ -83,7 +83,7 @@ public class TestTopMusic {
 			if (!topMusic.down(Teclado.leerEntero("Introduce el indice de la cancion")))
 				System.out.println("Imposible bajar de posicion");
 			else
-				System.out.println("La canción ha bajado de posicion");
+				System.out.println("La canciÃ³n ha bajado de posicion");
 		}
 
 	}
@@ -93,7 +93,7 @@ public class TestTopMusic {
 			if (!topMusic.up(Teclado.leerEntero("Introduce el indice de la cancion")))
 				System.out.println("Imposible subir de posicion");
 			else
-				System.out.println("La canción ha subido de posicion");
+				System.out.println("La canciÃ³n ha subido de posicion");
 		}
 	}
 
@@ -112,19 +112,19 @@ public class TestTopMusic {
 	private static void annadirCancion() {
 		int posicion;
 		if (topMusic.isEmpty()) {
-			if(topMusic.add(Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerCadena("año:")))
-				System.out.println("Cancion añadida a la lista");
+			if(topMusic.add(Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerCadena("aÃ±o:")))
+				System.out.println("Cancion aÃ±adida a la lista");
 			else
-			System.out.println("Imposible añadir cancion");
+			System.out.println("Imposible aÃ±adir cancion");
 		} 
 		else {
-			posicion = Teclado.leerEntero("Introduce la posicion de la cancion a añadir:");
+			posicion = Teclado.leerEntero("Introduce la posicion de la cancion a aÃ±adir:");
 			
 			if (indiceEsValido(posicion)){
-				if(topMusic.add((posicion),Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerCadena("año:")))
-					System.out.println("Cancion añadida a la lista");
+				if(topMusic.add((posicion),Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerCadena("aÃ±o:")))
+					System.out.println("Cancion aÃ±adida a la lista");
 				else
-				System.out.println("Imposible añadir cancion");
+				System.out.println("Imposible aÃ±adir cancion");
 			}
 			
 		}
@@ -132,7 +132,7 @@ public class TestTopMusic {
 
 	private static boolean indiceEsValido(int posicion) {
 		if (!topMusic.esValido(posicion - 1)) {
-			System.out.println("Imposible añadir cancion");
+			System.out.println("Imposible aÃ±adir cancion");
 			return false;
 		}
 		return true;
@@ -148,7 +148,7 @@ public class TestTopMusic {
 	}
 
 	/**
-	 * Añade canciones ya creadas al topmusic
+	 * AÃ±ade canciones ya creadas al topmusic
 	 */
 	static void pregenerar() {
 		topMusic.add("Californication", "Red Hot Chili Peppers",
