@@ -1,7 +1,7 @@
-package estructurasIII.regExp;
+package regExp;
 
 /**
- * Sobre la canciÛn se almacenar· el tÌtulo, artista o grupo y aÒo de grabaciÛn.
+ * Sobre la canci√≥n se almacenar√° el t√≠tulo, artista o grupo y a√±o de grabaci√≥n.
  * 7.3
  * 
  * @author Nieves Borrero.
@@ -36,7 +36,7 @@ public class Cancion {
 		return result;
 	}
 	/**
-	 * Crea una nueva canciÛn si los argumentos dados cumplen las condiciones, de lo contrario devuelve null.
+	 * Crea una nueva canci√≥n si los argumentos dados cumplen las condiciones, de lo contrario devuelve null.
 	 * @param titulo
 	 * @param artistaOgrupo
 	 * @param anio
@@ -84,7 +84,7 @@ public class Cancion {
 	@Override
 	public String toString() {
 		return "titulo:" + titulo + ", artista/grupo:" + artistaOgrupo
-				+ ", aÒo:" + anio;
+				+ ", a√±o:" + anio;
 	}
 
 }
