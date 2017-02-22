@@ -23,7 +23,7 @@ public class Cancion {
 	 * @param artistaOgrupo
 	 * @param anio
 	 */
-	public Cancion(String titulo, String artistaOgrupo, int anio) {
+	private Cancion(String titulo, String artistaOgrupo, int anio) {
 		this.titulo = titulo;
 		this.artistaOgrupo = artistaOgrupo;
 		this.anio = anio;
