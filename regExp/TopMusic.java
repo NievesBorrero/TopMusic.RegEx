@@ -20,7 +20,7 @@ public class TopMusic{
 	 * Constructor que crea una lista vacía
 	 */
 	TopMusic() {
-		setTop(new ArrayList<Cancion>());
+r		setTop(new ArrayList<Cancion>());
 	}
 
 	private ArrayList<Cancion> getTop() {
@@ -38,7 +38,7 @@ public class TopMusic{
 	 * @param cancion
 	 */
 	boolean add(int index, String titulo, String artista, int fecha) {
-		Cancion cancion=Cancion.getInstance(titulo, artista, fecha);
+		Cancion cancion=Cancion.getInstance(titulo.trim(), artista.trim(), fecha);
 		if (!esValido(index - 1))
 			return false;
 		if (getTop().contains(cancion)||cancion==null)
@@ -53,7 +53,7 @@ public class TopMusic{
 	 * @param cancion
 	 */
 	public boolean add(String titulo, String artista, int fecha) {
-		Cancion cancion=Cancion.getInstance(titulo, artista, fecha);
+		Cancion cancion=Cancion.getInstance(titulo.trim(), artista.trim(), fecha);
 		if(cancion==null)
 			return false;
 		getTop().add(cancion);
