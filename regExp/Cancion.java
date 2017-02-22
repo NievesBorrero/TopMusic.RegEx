@@ -41,9 +41,11 @@ public class Cancion {
 	static Cancion getInstance(String titulo, String artistaOgrupo,int anio) {
 		// el matches() de la clase String indica si la cadena coincide con la
 		// expresion que le pasamos como argumento.
-		if (titulo.matches("^[^\\s].*") && artistaOgrupo.matches("^[^\\s].*")&& anio>1900 && anio<=anioActual)
+		if (titulo.matches("([a-zA-Z\\dáéíóúñÑ´\\.]+\\s?){1,}")
+		    && artistaOgrupo.matches("([a-zA-Z\\dáéíóúñÑ´\\.]+\\s?){1,}")
+		    && anio>1900 && anio<=anioActual)
 			return new Cancion(titulo, artistaOgrupo, anio);
-		// anio.matches("19\\d{2}|200\\d|201[0-7]")
+		
 			else return null;
 
 	}
