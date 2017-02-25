@@ -109,27 +109,32 @@ public class TestTopMusic {
 		System.out.println(topMusic);
 	}
 
+	
 	private static void annadirCancion() {
 		int posicion;
 		if (topMusic.isEmpty()) {
-			if(topMusic.add(Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerEntero("año:")))
-				System.out.println("Cancion añadida a la lista");
+			if(topMusic.add(Teclado.leerCadena("Titulo:").trim(), 
+					Teclado.leerCadena("Artista o grupo:").trim(), 
+						Teclado.leerEntero("aÃ±o:")))
+				System.out.println("Cancion aÃ±adida a la lista");
 			else
-			System.out.println("Imposible añadir cancion");
+			System.out.println("Imposible aÃ±adir cancion");
 		} 
 		else {
-			posicion = Teclado.leerEntero("Introduce la posicion de la cancion a añadir:");
+			posicion = Teclado.leerEntero("Introduce la posicion de la cancion a aÃ±adir:");
 			
 			if (indiceEsValido(posicion)){
-				if(topMusic.add((posicion),Teclado.leerCadena("Titulo:"), Teclado.leerCadena("Artista o grupo:"), Teclado.leerEntero("año:")))
-					System.out.println("Cancion añadida a la lista");
+				if(topMusic.add((posicion),Teclado.leerCadena("Titulo:").trim(), 
+						Teclado.leerCadena("Artista o grupo:").trim(),
+							Teclado.leerEntero("aÃ±o:")))
+					System.out.println("Cancion aÃ±adida a la lista");
 				else
-				System.out.println("Imposible añadir cancion");
+				System.out.println("Imposible aÃ±adir cancion");
 			}
 			
 		}
 	}
-
+	
 	private static boolean indiceEsValido(int posicion) {
 		if (!topMusic.esValido(posicion - 1)) {
 			System.out.println("Imposible añadir cancion");
