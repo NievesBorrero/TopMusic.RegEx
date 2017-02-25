@@ -13,8 +13,8 @@ public class Cancion {
 	private String titulo;
 	private String artistaOgrupo;
 	private int anio;
-	private static final Calendar fecha= Calendar.getInstance();
-	private static final int anioActual= fecha.get(Calendar.YEAR);
+	private static final Calendar FECHA= Calendar.getInstance();
+	private static final int ANIOACTUAL= fecha.get(Calendar.YEAR);
 
 	/**
 	 * Constructor
@@ -38,18 +38,20 @@ public class Cancion {
 	 * @return
 	 */
 
-	static Cancion getInstance(String titulo, String artistaOgrupo,int anio) {
+	static Cancion getInstance(String titulo, String artistaOgrupo, int anio) {
 		// el matches() de la clase String indica si la cadena coincide con la
 		// expresion que le pasamos como argumento.
-		if (titulo.matches("([a-zA-Z\\dáéíóúñÑ´\\.]+\\s?){1,}")
-		    && artistaOgrupo.matches("([a-zA-Z\\dáéíóúñÑ´\\.]+\\s?){1,}")
-		    && anio>1900 && anio<=anioActual)
+		if (controlarTituloGrupo(titulo)&& controlarTituloGrupo(artistaOgrupo)
+				&& anio > 1900 && anio <= ANIOACTUAL) {
 			return new Cancion(titulo, artistaOgrupo, anio);
-		
-			else return null;
-
+		}
+		return null;
 	}
 
+	private static boolean controlarTituloGrupo(String cadena) {
+		return cadena.matches("([a-zA-Z\\dáéíóúñÑ´\\.]+\\s?){1,}");
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
