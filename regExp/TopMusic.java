@@ -38,7 +38,7 @@ r		setTop(new ArrayList<Cancion>());
 	 * @param cancion
 	 */
 	boolean add(int index, String titulo, String artista, int fecha) {
-		Cancion cancion=Cancion.getInstance(titulo.trim(), artista.trim(), fecha);
+		Cancion cancion=Cancion.getInstance(titulo, artista, fecha);
 		if (!esValido(index - 1))
 			return false;
 		if (getTop().contains(cancion)||cancion==null)
@@ -53,7 +53,7 @@ r		setTop(new ArrayList<Cancion>());
 	 * @param cancion
 	 */
 	public boolean add(String titulo, String artista, int fecha) {
-		Cancion cancion=Cancion.getInstance(titulo.trim(), artista.trim(), fecha);
+		Cancion cancion=Cancion.getInstance(titulo, artista, fecha);
 		if(cancion==null)
 			return false;
 		getTop().add(cancion);
